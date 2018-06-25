@@ -9,13 +9,13 @@ function playGame() {
 
     var from = parseInt(prompt("Enter the lower bound"));
 
-        while (typeof from == "number") {
+        while (typeof from != "number") {
             from = parseInt(prompt("That is not a real number. Please enter the lower bound"));
         }
 
     var to = parseInt(prompt("Enter the higher bound"));
 
-            while (typeof to == "number") {
+            while (typeof to != "number") {
 
             to = parseInt(prompt("That is not a real number. Please enter the higher bound"));
         }
