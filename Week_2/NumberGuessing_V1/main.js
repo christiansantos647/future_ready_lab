@@ -13,7 +13,7 @@ function playGame() {
         while (isNaN(from)) {
             from = parseInt(prompt("That is not a real number. Please enter the lower bound"));
         }
-        while (from < 0 && from > 1000) {
+        while (from < 0 || from > 1000) {
             from = parseInt(prompt("Please pick a number less than 1000 and greater than 0"));
         }
 //Checks if higher bound is within the given range and greater than the lower bound
@@ -22,7 +22,7 @@ function playGame() {
         while (isNaN(to)) {
             to = parseInt(prompt("That is not a real number. Please enter the higher bound"));
         }
-        while (to < 0 && to > 1000) {
+        while (to < 0 || to > 1000) {
             from = parseInt(prompt("Please pick a number less than 1000 and greater than 0"));
         }
         while (to < from) {
