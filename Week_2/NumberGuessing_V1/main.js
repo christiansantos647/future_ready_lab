@@ -7,7 +7,7 @@ function playGame() {
     //Obtains the bounds of the game
     //Uses parseInt() to ensure that numbers rather than strings are used
 
-//Checks if the lower bound is within the ranger given
+//Checks if the lower bound is within the range given
     var from = parseInt(prompt("Enter the lower bound"));
 
         while (isNaN(from)) {
