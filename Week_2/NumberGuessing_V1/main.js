@@ -52,6 +52,10 @@ while (target != currentGuess) {
 
         } 
 
+    } else if (isNaN(currentGuess)) {
+       
+        currentGuess = parseInt(prompt("Please enter a number within the range"));
+
     } else {
 
         currentGuess = parseInt(prompt("Please enter a number within the range"));
