@@ -2,22 +2,31 @@
 function playGame() {
     
 
-    alert("First, enter a low number, then a high number. Then, guess a random number within the low and high number");
+    alert("First, enter a low number, then a high number. Then, guess a random number within the low and high number. Each bound must be less than 1000 and greater than 0");
 
     //Obtains the bounds of the game
     //Uses parseInt() to ensure that numbers rather than strings are used
 
+//Checks if the lower bound is within the ranger given
     var from = parseInt(prompt("Enter the lower bound"));
 
-        while (typeof from != "number") {
+        while (isNaN(from)) {
             from = parseInt(prompt("That is not a real number. Please enter the lower bound"));
         }
-
+        while (from < 0 && from > 1000) {
+            from = parseInt(prompt("Please pick a number less than 1000 and greater than 0"));
+        }
+//Checks if higher bound is within the given range and greater than the lower bound
     var to = parseInt(prompt("Enter the higher bound"));
 
-            while (typeof to != "number") {
-
+        while (isNaN(to)) {
             to = parseInt(prompt("That is not a real number. Please enter the higher bound"));
+        }
+        while (to < 0 && to > 1000) {
+            from = parseInt(prompt("Please pick a number less than 1000 and greater than 0"));
+        }
+        while (to < from) {
+            to = parseInt(prompt("Please pick a number greater than your lower bound"));
         }
 
     //Use Math.round() to get whole number
@@ -27,7 +36,7 @@ function playGame() {
 
     var totalGuesses = 1
 while (target != currentGuess) {
-    if (currentGuess > from && currentGuess < to) {
+    if (currentGuess > (from - 1) && currentGuess < (to + 1)) {
 
         if (currentGuess < target) {
 
