@@ -45,7 +45,7 @@ function draw() {
         circle.ySpeed = circle.ySpeed;
         
     }
-    
+    //Moves the circle
     circle.xCoor += circle.xSpeed;
     
     circle.yCoor += circle.ySpeed;
