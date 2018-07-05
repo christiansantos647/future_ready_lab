@@ -104,20 +104,20 @@ function draw() {
                 
                 randomize(i);
                 
-                //changes the speed so that both balls move at a new speed
-               /* var newHorizontalSpeed = (circleList[z].xSpeed + circleList[i].xSpeed) / 2;
+                //changes the speed so that both balls move at a new average speed
+                var newHorizontalSpeed = (abs(circleList[z].xSpeed) + abs(circleList[i].xSpeed)) / 2;
                 
-                var newVerticalSpeed = (circleList[z].ySpeed + circleList[i].ySpeed) / 2;
+                var newVerticalSpeed = (abs(circleList[z].ySpeed) + abs(circleList[i].ySpeed)) / 2;
+                
                 //changes the speed of both 
-                circleList[z].xSpeed = newVerticalSpeed;
+                circleList[z].ySpeed = newVerticalSpeed;
                 
                 circleList[z].xSpeed = newHorizontalSpeed;
                 
-                circleList[i].xSpeed = newVerticalSpeed;
+                circleList[i].ySpeed = -newVerticalSpeed;
                 
-                circleList[i].xSpeed = newHorizontalSpeed;
-                    */
-                
+                circleList[i].xSpeed = -newHorizontalSpeed;
+                    
                 //function to bounce the ball
                 changeHorizontalSpeed(z);
 
