@@ -119,13 +119,13 @@ function draw() {
                 circleList[i].xSpeed = -newHorizontalSpeed;
                     
                 //function to bounce the ball
-                changeHorizontalSpeed(z);
+                //changeHorizontalSpeed(z);
 
-                changeVerticalSpeed(z);
+                //changeVerticalSpeed(z);
                 
-                changeHorizontalSpeed(i);
+                //changeHorizontalSpeed(i);
                 
-                changeVerticalSpeed(i);
+                //changeVerticalSpeed(i);
                 
                 circleList[z].xCoor += circleList[z].xSpeed;
                 
@@ -140,13 +140,31 @@ function draw() {
         if(circleList[i].xCoor > width || circleList[i].xCoor < 0){
 
             randomize(i);
+            
+             //adds speed when hitting a wall, but if the speed is too high, it it reset
+            circleList[i].xSpeed += 1
+            
+            
+            if (circleList[i].xSpeed > 25) {
+                
+                circleList[i].xSpeed = 10
+                
+            }
 
             changeHorizontalSpeed(i);
 
         } else if(circleList[i].yCoor > height || circleList[i].yCoor < 0){
 
             randomize(i);
-
+            
+            //adds speed when hitting a wall, but if the speed is too high, it it reset
+            circleList[i].ySpeed += 1
+            
+            if (circleList[i].ySpeed > 25) {
+                
+                circleList[i].ySpeed = 10
+                
+            }
             changeVerticalSpeed(i);
 
         //If not touching an edge, circle keeps moving forward    
